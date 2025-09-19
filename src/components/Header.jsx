@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const NavLink = ({ children, href, isRed = false }) => (
+const NavLink = ({ children, href, isRed = false, onClick }) => (
   <li>
     <a
       href={href}
-      className={`transition-colors duration-300 hover:text-gray-500 font-normal ${isRed ? 'text-red-600 font-semibold' : 'text-gray-600'}`}
+      onClick={onClick}
+      className={`transition-colors duration-300 hover:text-gray-500 font-normal ${
+        isRed ? 'text-red-600 font-semibold' : 'text-gray-600'
+      }`}
     >
       {children}
     </a>
   </li>
 );
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +29,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-   { name: 'PHOTO BOOKS', href: '#' },
+    { name: 'PHOTO BOOKS', href: '#' },
     { name: 'WEDDING ALBUMS', href: '#' },
     { name: 'DESIGN SERVICE', href: '#' },
     { name: 'CHRISTMAS DEADLINES', href: '#', isRed: true },
@@ -73,21 +77,20 @@ const Header = () => {
         </nav>
 
         {/* Right Section with icons + rating */}
-<div className="hidden lg:flex flex-col items-center gap-2">
-  <div className="flex items-center gap-6">
-    <Search className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
-    <User className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
-    <ShoppingCart className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
-  </div>
-  {/* Rating Image slightly pushed down */}
-  <div className="mt-4"> {/* <-- Add margin-top to move it down */}
-    <img
-      src="/rating.png"
-      alt="Customer Rating"
-      className="h-14 w-auto object-contain"
-    />
-  </div>
-</div>
+        <div className="hidden lg:flex flex-col items-center gap-2">
+          <div className="flex items-center gap-6">
+            <Search className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
+            <User className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
+            <ShoppingCart className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
+          </div>
+          <div className="mt-4">
+            <img
+              src="/rating.png"
+              alt="Customer Rating"
+              className="h-14 w-auto object-contain"
+            />
+          </div>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
@@ -114,17 +117,13 @@ const Header = () => {
               <ul className="flex flex-col items-center gap-6 p-6">
                 {navLinks.map((link) => (
                   <motion.li key={link.name} variants={linkVariants}>
-                    <a
+                    <NavLink
                       href={link.href}
+                      isRed={link.isRed}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-lg transition-colors duration-300 hover:text-brand-perfect ${
-                        link.isRed
-                          ? 'text-brand-red font-semibold'
-                          : 'text-brand-dark'
-                      }`}
                     >
                       {link.name}
-                    </a>
+                    </NavLink>
                   </motion.li>
                 ))}
               </ul>

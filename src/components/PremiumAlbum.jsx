@@ -54,29 +54,28 @@ const PremiumAlbum = () => {
           variants={itemVariants}
         >
           {premiumAlbums.map((album, index) => (
-          <motion.div
-  key={index}
-  variants={itemVariants}
-  className="w-full max-w-md"
->
-  <motion.img
-    src={album.src}
-    alt={album.alt}
-    className="w-full rounded-lg object-contain cursor-pointer"
-    style={{ backgroundColor: 'transparent', zIndex: 1 }}
-    whileHover={{ scale: 1.7, zIndex: 10 }} // bigger zoom effect
-    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-  />
-  <div className="flex justify-center items-center gap-2 sm:gap-3 mt-4 text-sm sm:text-base">
-    <span className="font-semibold text-black">{album.title}</span>
-    <span className="text-gray-400">|</span>
-    <span className="italic text-gray-600">{album.subtitle}</span>
-    <span className="text-gray-400">|</span>
-    <span className="text-gray-500">{album.price}</span>
-  </div>
-</motion.div>
-
-
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="w-full max-w-md relative"
+            >
+              <motion.img
+                src={album.src}
+                alt={album.alt}
+                className="w-full rounded-lg object-contain cursor-pointer"
+                style={{ backgroundColor: 'transparent', zIndex: 1 }}
+                whileHover={{ scale: 1.7, zIndex: 10 }} // desktop hover
+                whileTap={{ scale: 1.7, zIndex: 10 }}   // mobile tap
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              />
+              <div className="flex justify-center items-center gap-2 sm:gap-3 mt-4 text-sm sm:text-base">
+                <span className="font-semibold text-black">{album.title}</span>
+                <span className="text-gray-400">|</span>
+                <span className="italic text-gray-600">{album.subtitle}</span>
+                <span className="text-gray-400">|</span>
+                <span className="text-gray-500">{album.price}</span>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
