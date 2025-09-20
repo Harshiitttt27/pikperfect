@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 const NavLink = ({ children, href, isRed = false, onClick }) => (
   <li>
     <a
@@ -29,7 +29,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'PHOTO BOOKS', href: '#' },
+    { name: 'PHOTO BOOKS', href: '/travel-photo-books' },
     { name: 'WEDDING ALBUMS', href: '#' },
     { name: 'DESIGN SERVICE', href: '#' },
     { name: 'CHRISTMAS DEADLINES', href: '#', isRed: true },
