@@ -65,7 +65,8 @@ const Hero = () => {
       src="/album.png"
       alt="Beautifully crafted wedding photo album"
       className="w-full h-auto object-contain rounded-lg bg-transparent"
-
+      style={{
+         filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))'}}
     />
   </div>
 </motion.div>

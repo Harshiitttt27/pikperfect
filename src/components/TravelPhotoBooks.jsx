@@ -419,19 +419,17 @@
 // export default PhotobookPage;
 
 import React from 'react';
-import { Star } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const PhotobookPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
+    <div className="min-h-screen bg-[#F0F7F0]">
+      <Header bgColor="#F0F7F0" />
 
-      {/* Hero Section - Fixed to prevent overlapping */}
-      <section className="bg-gradient-to-b from-gray-100 to-white pt-28 pb-16 md:pt-32 md:pb-20">
+      {/* Hero Section */}
+      <section className="pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center gap-8">
-          
           {/* Text */}
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 mb-4 sm:mb-6">
@@ -446,174 +444,167 @@ const PhotobookPage = () => {
             </button>
             <p className="text-xs sm:text-sm text-gray-500">No advance payment required</p>
           </div>
-{/* Hero Image - Travel Book */}
-<div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg h-72 sm:h-80 md:h-96 mx-auto md:mx-0 mt-8">
+
+          {/* Hero Image */}
+          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg h-72 sm:h-80 md:h-96 mx-auto md:mx-0 mt-8">
+            <img
+              src="/travel book.png"
+              alt="Travel Book"
+              className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+              style={{ border: 'none', borderRadius: 0 }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <img
+            src="/features image.png"
+            alt="Features"
+            className="w-full h-auto object-cover"
+            style={{ border: 'none', borderRadius: 0 }}
+          />
+        </div>
+      </section>
+
+      {/* Travel Photo Book Section */}
+      <section className="py-12 md:py-16 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Everyday Classic</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">Travel Photo Book</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 md:mb-12">
+            Digitally printed and professionally bound, these make for the perfect holiday photo books to display all of
+            your most fond memories for many years to come.
+          </p>
+
+          <div className="mb-8 md:mb-12">
+            <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 49.00</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+              <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
+              <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
+            </div>
+          </div>
+
+          <div className="relative mx-auto max-w-full sm:max-w-4xl md:max-w-5xl">
   <img
-    src="/travel book.png"
-    alt="Travel Book"
-    className="w-full h-full object-cover rounded-lg shadow-lg"
+    src="/travel 1.png"
+    alt="Travel Photo Book"
+    className="w-full h-auto sm:h-80 md:h-96 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+    style={{ border: 'none', borderRadius: 0 }}
   />
 </div>
-
 
 
         </div>
       </section>
 
-      {/* Features Section - Single Image */}
-<section className="py-12 md:py-16 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <img
-      src="/features image.png" // Replace with your actual image path
-      alt="Features"
-      className="w-full h-auto rounded-lg shadow-lg object-cover"
-    />
-  </div>
-</section>
-
-
-     {/* Travel Photo Book Section */}
-<section className="py-12 md:py-16 bg-gray-50 text-center">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Everyday Classic</p>
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">Travel Photo Book</h2>
-    <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 md:mb-12">
-      Digitally printed and professionally bound, these make for the perfect holiday photo books to display all of
-      your most fond memories for many years to come.
-    </p>
-
-    <div className="mb-8 md:mb-12">
-      <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 49.00</p>
-      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-        <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
-        <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
-      </div>
-    </div>
-
-    {/* Travel Photo Book Image */}
-    <div className="relative mx-auto max-w-4xl">
-      <img
-        src="/travel 1.png" // Replace with your actual image path
-        alt="Travel Photo Book"
-        className="w-full h-auto rounded-lg shadow-2xl object-cover"
-      />
-    </div>
-  </div>
-</section>
-
-
       {/* Layflat Section */}
-<section className="py-12 md:py-16 bg-white text-center">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Bestseller</p>
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">Layflat Travel Photo Album</h2>
-    <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-8">
-      Developed on Fuji photo paper offering outstanding color and clarity, our layflat travel photo album books
-      offer gorgeous uninterrupted double page spreads of your favorite holiday photos.
-    </p>
-    <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 79.00</p>
-    <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
-      <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
-      <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
-    </div>
+      <section className="py-12 md:py-16 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Bestseller</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">Layflat Travel Photo Album</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-8">
+            Developed on Fuji photo paper offering outstanding color and clarity, our layflat travel photo album books
+            offer gorgeous uninterrupted double page spreads of your favorite holiday photos.
+          </p>
+          <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 79.00</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
+            <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
+            <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
+          </div>
 
-    {/* Layflat Album Image */}
-    <div className="relative mx-auto max-w-4xl">
-      <img
-        src="/layflat.png" // Replace with your actual image path
-        alt="Layflat Travel Photo Album"
-        className="w-full h-auto rounded-lg shadow-2xl object-cover"
-      />
-    </div>
-  </div>
-</section>
+          <div className="relative mx-auto max-w-full sm:max-w-4xl md:max-w-5xl">
+  <img
+    src="/layflat.png"
+    alt="Layflat Travel Photo Album"
+    className="w-full h-auto sm:h-80 md:h-96 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+    style={{ border: 'none', borderRadius: 0 }}
+  />
+</div>
 
+
+        </div>
+      </section>
 
       {/* Premium Section */}
-<section className="py-12 md:py-16 bg-gray-50 text-center">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Luxury Line</p>
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">Premium Layflat Travel Album</h2>
-    <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-8">
-      Featuring thick layflat pages developed on archival Fuji photo paper and offering a wide range of premium
-      cover options, these premium travel photo albums are the perfect way to turn those special moments into
-      memories that will last a lifetime.
-    </p>
-    <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 199.00</p>
-    <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
-      <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
-      <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
-    </div>
+      <section className="py-12 md:py-16 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-base md:text-lg font-light text-gray-600 mb-4">Our Luxury Line</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 md:mb-8">
+            Premium Layflat Travel Album
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-8">
+            Featuring thick layflat pages developed on archival Fuji photo paper and offering a wide range of premium
+            cover options, these premium travel photo albums are the perfect way to turn those special moments into
+            memories that will last a lifetime.
+          </p>
+          <p className="text-lg md:text-xl font-semibold mb-6 md:mb-8">From CHF 199.00</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
+            <button className="bg-gray-800 text-white px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-700 transition-colors">ORDER</button>
+            <button className="border border-gray-800 text-gray-800 px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg hover:bg-gray-50 transition-colors">EXPLORE</button>
+          </div>
 
-    {/* Premium Album Image */}
-    <div className="relative mx-auto max-w-4xl">
-      <img
-        src="/premium layflat.jpg" // Replace this with your actual image path
-        alt="Premium Layflat Travel Album"
-        className="w-full h-auto rounded-lg shadow-2xl object-cover"
-      />
-    </div>
-  </div>
-</section>
-
-{/* Process Section */}
-<section className="py-12 md:py-16 bg-white text-center">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-12 md:mb-16 text-gray-900">
-      Get Album in 4 Easy Steps
-    </h2>
-
-    {/* Process Image */}
-    <div className="relative mx-auto max-w-4xl">
-      <img
-        src="/steps.png" // Replace with your actual image path
-        alt="Album Process Steps"
-        className="w-full h-auto rounded-lg shadow-2xl object-cover"
-      />
-    </div>
-  </div>
-</section>
-
-
-      {/* Design Ideas Section */}
-<section className="py-12 md:py-16 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-gray-900 mb-6 md:mb-8">
-      Travel Photo Book Ideas
-    </h2>
-    <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 md:mb-16">
-      Browse through some of our most popular vacation photo book design styles. Or work with our design team to create one that is entirely unique to your style.
-    </p>
-
-    {/* Grid Examples */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-      {[
-        '/1.jpg',
-        '/2.jpg',
-        '/3.jpg',
-        '/4.jpg',
-        '/5.jpg',
-        '/6.jpg',
-        '/7.jpg',
-        '/8.jpg',
-        '/9.jpg'
-      ].map((src, idx) => (
-        <div key={idx} className="text-center">
-          <div className="h-60 sm:h-64 md:h-80 rounded-lg mb-4 shadow-lg overflow-hidden">
+          <div className="relative mx-auto max-w-4xl">
             <img
-              src={src}
-              alt={`Photo ${idx + 1}`}
-              className="w-full h-full object-cover"
+              src="/premium layflat.png"
+              alt="Premium Layflat Travel Album"
+              className="w-full h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+              style={{ border: 'none', borderRadius: 0, boxShadow: 'none' }}
             />
           </div>
-          <h3 className="text-lg md:text-xl font-serif text-gray-900 mb-1">African Safari</h3>
-          <p className="text-sm md:text-base text-gray-600 italic">Travel Photo Book</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
+      {/* Process Section - No hover */}
+      <section className="py-12 md:py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-12 md:mb-16 text-gray-900">
+            Get Album in 4 Easy Steps
+          </h2>
+
+          <div className="relative mx-auto max-w-4xl">
+            <img
+              src="/steps.png"
+              alt="Album Process Steps"
+              className="w-full h-auto object-cover"
+              style={{ border: 'none', borderRadius: 0 }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Design Ideas Section */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-gray-900 mb-6 md:mb-8">
+            Travel Photo Book Ideas
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            Browse through some of our most popular vacation photo book design styles. Or work with our design team to create one that is entirely unique to your style.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              '/1.jpg','/2.jpg','/3.jpg','/4.jpg','/5.jpg','/6.jpg','/7.jpg','/8.jpg','/9.jpg'
+            ].map((src, idx) => (
+              <div key={idx} className="text-center">
+                <div className="h-60 sm:h-64 md:h-80 mb-4 overflow-hidden">
+                  <img
+                    src={src}
+                    alt={`Photo ${idx + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                    style={{ border: 'none', borderRadius: 0 }}
+                  />
+                </div>
+                <h3 className="text-lg md:text-xl font-serif text-gray-900 mb-1">African Safari</h3>
+                <p className="text-sm md:text-base text-gray-600 italic">Travel Photo Book</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </div>
   );

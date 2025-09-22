@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, User, ShoppingCart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+
 const NavLink = ({ children, href, isRed = false, onClick }) => (
   <li>
     <a
@@ -16,14 +16,12 @@ const NavLink = ({ children, href, isRed = false, onClick }) => (
   </li>
 );
 
-const Header = () => {
+const Header = ({ bgColor }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -48,9 +46,8 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-brand-bg shadow-md backdrop-blur-sm' : 'bg-brand-bg'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md"
+      style={{ backgroundColor: bgColor || '#F0E9E5' }} // fallback color
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -58,11 +55,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center py-6 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <a href="#">
-          <img
-            src="/logo.png"
-            alt="PikPerfect Logo"
-            className="h-10 w-auto object-contain"
-          />
+          <img src="/logo.png" alt="PikPerfect Logo" className="h-10 w-auto object-contain" />
         </a>
 
         {/* Desktop Navigation */}
@@ -76,7 +69,7 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* Right Section with icons + rating */}
+        {/* Right Section */}
         <div className="hidden lg:flex flex-col items-center gap-2">
           <div className="flex items-center gap-6">
             <Search className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
@@ -84,20 +77,13 @@ const Header = () => {
             <ShoppingCart className="cursor-pointer text-brand-dark h-5 w-5 transition-colors duration-300 hover:text-brand-perfect" />
           </div>
           <div className="mt-4">
-            <img
-              src="/rating.png"
-              alt="Customer Rating"
-              className="h-14 w-auto object-contain"
-            />
+            <img src="/rating.png" alt="Customer Rating" className="h-14 w-auto object-contain" />
           </div>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-brand-dark"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-brand-dark">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -117,23 +103,14 @@ const Header = () => {
               <ul className="flex flex-col items-center gap-6 p-6">
                 {navLinks.map((link) => (
                   <motion.li key={link.name} variants={linkVariants}>
-                    <NavLink
-                      href={link.href}
-                      isRed={link.isRed}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
+                    <NavLink href={link.href} isRed={link.isRed} onClick={() => setIsMenuOpen(false)}>
                       {link.name}
                     </NavLink>
                   </motion.li>
                 ))}
               </ul>
-              {/* Rating image also visible in mobile */}
               <div className="mt-4 flex justify-center">
-                <img
-                  src="/rating.png"
-                  alt="Customer Rating"
-                  className="h-6 w-auto object-contain"
-                />
+                <img src="/rating.png" alt="Customer Rating" className="h-6 w-auto object-contain" />
               </div>
             </nav>
           </motion.div>
